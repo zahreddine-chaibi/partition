@@ -1,36 +1,50 @@
 package fr.test.parttion;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import org.junit.Assert;
 
 import fr.test.partition.Partition;
 import junit.framework.TestCase;
 
-public class ParttionTest extends TestCase {
+public class PartitionTest extends TestCase {
   
-  public void parttion() {
+  public void testPartition() {
     Assert.assertTrue(Partition.partion(Arrays.asList(1, 2, 3, 4, 5), 2).size() == 3);
     Assert.assertTrue(Partition.partion(Arrays.asList(1, 2, 3, 4, 5), 3).size() == 2);
     Assert.assertTrue(Partition.partion(Arrays.asList(1, 2, 3, 4, 5), 1).size() == 5);
     Assert.assertTrue(Partition.partion(Arrays.asList(1, 2, 3, 4, 5), 6).size() == 1);
   }
 
+  public void testListeVide() {
+    Assert.assertTrue(Partition.partion(Collections.emptyList(), 6).size() == 0);
+  }
+
   public void testListeNull() {
     try {
       Partition.partion(null, 1);
-      Assert.fail("IllegalArgumentException non levÈe avec la propriÈtÈ liste ‡ null");
+      Assert.fail("IllegalArgumentException non lev√©e avec la propri√©t√© liste √† null");
     } catch (IllegalArgumentException iae) {
-      // ignorer l'exception puisque le test est OK (l'exception est levÈe)
+      // ignorer l'exception puisque le test est OK (l'exception est lev√©e)
     }
   }
 
-  public void testtailleNull() {
+  public void testTailleNull() {
     try {
       Partition.partion(Arrays.asList(1, 2, 3, 4, 5), 0);
-      Assert.fail("IllegalArgumentException non levÈe avec la propriÈtÈ taille ‡ null");
+      Assert.fail("IllegalArgumentException non lev√©e avec la propri√©t√© taille √† null");
     } catch (IllegalArgumentException iae) {
-      // ignorer l'exception puisque le test est OK (l'exception est levÈe)
+      // ignorer l'exception puisque le test est OK (l'exception est lev√©e)
+    }
+  }
+
+  public void testTailleNegative() {
+    try {
+      Partition.partion(Arrays.asList(1, 2, 3, 4, 5), -2);
+      Assert.fail("IllegalArgumentException non lev√©e avec la propri√©t√© taille n√©gative");
+    } catch (IllegalArgumentException iae) {
+      // ignorer l'exception puisque le test est OK (l'exception est lev√©e)
     }
   }
 }
