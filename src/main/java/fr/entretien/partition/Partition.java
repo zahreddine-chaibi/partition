@@ -7,13 +7,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 import fr.entretien.partition.exception.PartitionException;
 
 public class Partition {
-
+  
+  /**
+   * Elle fait la partition d'une liste en sous liste avec un maximum de taille le
+   * param√®tre entier entr√© en second param√®tre
+   * 
+   * @param liste  : Liste d'entier qui represente La liste √† partionner
+   * @param taille : Un entier qui reprsente La taille d'une partition
+   * @return retourne une liste de sous liste qui represente les partitions
+   */
   public static List<List<Integer>> partition(List<Integer> liste, Integer taille) {
     if (liste == null) {
-      throw new PartitionException("La liste ne doit pas Ítre null.");
+      throw new PartitionException("La liste ne doit pas √™tre null.");
     }
     if (taille <= 0) {
-      throw new PartitionException("La taille ne doit pas Ítre inferieur ou Ègale ‡ zÈro.");
+      throw new PartitionException("La taille ne doit pas √™tre inferieur ou √©gale √† z√©ro.");
     }
     List<List<Integer>> listeDeListe = new ArrayList<>();
     final AtomicInteger counter = new AtomicInteger();
