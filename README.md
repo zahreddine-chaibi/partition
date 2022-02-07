@@ -1,6 +1,6 @@
 ### Description
-La librairie expose une fonction « **partition** » qui prend un paramètre « **liste** » et un paramètre « **taille** » et retourne une liste de sous liste, où chaque sous liste a au maximum « **taille** » éléments.
-Exemples d'entrées et sorties :
+La librairie expose une fonction Â« **partition** Â» qui prend un paramÃ¨tre Â« **liste** Â» et un paramÃ¨tre Â« **taille** Â» et retourne une liste de sous liste, oÃ¹ chaque sous liste a au maximum Â« **taille** Â» Ã©lÃ©ments.
+Exemples d'entrÃ©es et sorties :
 ```
 partition([1,2,3,4,5], 2) retourne: [ [1,2], [3,4], [5] ]
 partition([1,2,3,4,5], 3) retourne: [ [1,2,3], [4,5] ]
@@ -8,19 +8,19 @@ partition([1,2,3,4,5], 1) retourne: [ [1], [2], [3], [4], [5] ]
 ```
 ### Exploitation 
 
-#####Build
-Pour faire un build il faut exécuter la commande suivante:
+##### Build
+Pour faire un build il faut exÃ©cuter la commande suivante:
 ```
 mvn clean install
 ```
-#####Test
-Pour tester il faut exécuter la commande suivante:
+##### Test
+Pour tester il faut exÃ©cuter la commande suivante:
 ```
 mvn test
 ```
 
-####Packaging
-Pour packager il faut exécuter la commande suivante:
+##### Packaging
+Pour packager il faut exÃ©cuter la commande suivante:
 ```
 mvn clean package
 ```
